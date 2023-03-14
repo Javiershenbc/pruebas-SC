@@ -31,7 +31,7 @@ contract NFTMarketplace {
 
         tokenPrice[tokenId] = price;
         tokenOwner[tokenId] = msg.sender;
-        nftContract.setApprovalForAll(address(this), true);
+        // nftContract.setApprovalForAll(address(this), true);
   
         emit NFTListed(tokenId, price, msg.sender);
     }
@@ -60,6 +60,7 @@ contract NFTMarketplace {
 
         // Transfer funds to seller
         payable(seller).transfer(price);
+        // nftContract.setApprovalForAll(address(this), false);
 
         // Update mapping
         delete tokenPrice[tokenId];

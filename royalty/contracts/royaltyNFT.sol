@@ -51,8 +51,5 @@ contract RoyaltyNFT is ERC721URIStorage, ERC2981, Ownable {
 
         return tokenId;
   }
-  function setApprovalForAll(address operator, bool approved) public override {
-    super.setApprovalForAll(operator, approved);
-    }
 
 }
