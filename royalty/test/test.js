@@ -117,6 +117,12 @@ contract("NFTMarketplace", (accounts) => {
     // Check that the NFT is no longer listed and that ownership has been transferred
     const owner = await royaltyNFTInstance.ownerOf(tokenId);
     assert.equal(owner, accounts[4]);
+    for (let i = 1; i <= 3; i++) {
+      await royaltyNFTInstance.setApprovalForAll(
+        nftMarketplaceContract.address,
+        false
+      );
+    }
   });
 });
 

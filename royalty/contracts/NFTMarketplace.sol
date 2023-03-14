@@ -32,7 +32,7 @@ contract NFTMarketplace {
         tokenPrice[tokenId] = price;
         tokenOwner[tokenId] = msg.sender;
         // nftContract.setApprovalForAll(address(this), true);
-  
+        // nftContract.setApprovalForAll(address(this), true);
         emit NFTListed(tokenId, price, msg.sender);
     }
 
